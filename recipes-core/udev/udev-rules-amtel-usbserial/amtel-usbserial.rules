@@ -1,0 +1,6 @@
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1ecb", ATTRS{idProduct}=="0202", RUN+="/sbin/modprobe usbserial vendor=0x1ecb product=0x0202"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1ecb", ATTRS{idProduct}=="0205", RUN+="/sbin/modprobe usbserial vendor=0x1ecb product=0x0205"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1ecb", ATTRS{idProduct}=="0206", RUN+="/sbin/modprobe usbserial vendor=0x1ecb product=0x0206"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1ecb", ATTRS{idProduct}=="0208", RUN+="/sbin/modprobe usbserial vendor=0x1ecb product=0x0208"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1ecb", ATTRS{idProduct}=="0209", RUN+="/sbin/modprobe usbserial vendor=0x1ecb product=0x0209"
+ACTION=="remove", SUBSYSTEM=="usb", ATTRS{idVendor}=="1ecb", RUN+="/sbin/modprobe -r usbserial"

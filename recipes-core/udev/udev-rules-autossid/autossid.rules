@@ -1,0 +1,2 @@
+SUBSYSTEM=="net", KERNEL=="wlan*", ACTION=="add",    RUN+="/etc/udev/scripts/autossid.sh"
+SUBSYSTEM=="net", KERNEL=="wlan*", ACTION=="remove", RUN+="/etc/udev/scripts/autossid.sh"

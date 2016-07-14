@@ -1,0 +1,2 @@
+SUBSYSTEM=="net", SUBSYSTEMS=="usb", ACTION=="add" RUN+="/etc/udev/scripts/ifupdown-usbnet.sh"
+SUBSYSTEM=="net", SUBSYSTEMS=="usb", ACTION=="remove" RUN+="/etc/udev/scripts/ifupdown-usbnet.sh"
