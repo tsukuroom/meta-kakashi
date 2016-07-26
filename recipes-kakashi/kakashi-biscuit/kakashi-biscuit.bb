@@ -30,6 +30,13 @@ do_install() {
 	cp -r ${S} ${D}/home/${ACCOUNT_NAME}/kakashi-biscuit
 	cp -f ${WORKDIR}/alternates ${D}/home/${ACCOUNT_NAME}/kakashi-biscuit/.git/objects/info/
 	cp -fR ${KAKASHI_SOUND} ${D}/home/${ACCOUNT_NAME}/kakashi-biscuit/
+
+	if [ -n "${CLARIFAI_ID}" ]; then
+		sed -i -e 's/<clarifai_id>/${CLARIFAI_ID}/g' ${D}/home/${ACCOUNT_NAME}/kakashi-biscuit/shell/startup.sh
+	fi
+	if [ -n "${CLARIFAI_SECRET}" ]; then
+		sed -i -e 's/<clarifai_secret>/${CLARIFAI_SECRET}/g' ${D}/home/${ACCOUNT_NAME}/kakashi-biscuit/shell/startup.sh
+	fi
 }
 
 FILES_${PN} += " \
