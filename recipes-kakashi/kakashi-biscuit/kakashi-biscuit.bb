@@ -8,7 +8,7 @@ inherit npm useradd
 B="${S}"
 
 DEPENDS += " nodejs"
-RDEPENDS_${PN} += " nodejs bash libudev libgphoto2"
+RDEPENDS_${PN} += " nodejs bash libudev libgphoto2 imagemagick"
 
 SRCBRANCH = "master"
 SRCREV = "${AUTOREV}"
@@ -24,11 +24,12 @@ USERADD_PACKAGES = "${PN}"
 USERADD_PARAM_${PN} = "-d /home/${ACCOUNT_NAME} -m -s /bin/sh -U -P ${ACCOUNT_PW} ${ACCOUNT_NAME}"
 
 do_install() {
-	#oe_runnpm install
+	oe_runnpm install
 
 	install -d ${D}/home/${ACCOUNT_NAME}
 	cp -r ${S} ${D}/home/${ACCOUNT_NAME}/kakashi-biscuit
 	cp -f ${WORKDIR}/alternates ${D}/home/${ACCOUNT_NAME}/kakashi-biscuit/.git/objects/info/
+	cp -fR ${KAKASHI_SOUND} ${D}/home/${ACCOUNT_NAME}/kakashi-biscuit/
 }
 
 FILES_${PN} += " \

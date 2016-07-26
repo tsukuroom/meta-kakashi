@@ -27,6 +27,7 @@ IMAGE_INSTALL = " \
 	imagemagick \
 	opencv \
 	alsa-utils \
+	sox \
 	git \
 	screen \
 	kakashi-biscuit \
@@ -43,6 +44,8 @@ IMAGE_ROOTFS_EXTRA_SPACE_append = "${@bb.utils.contains("DISTRO_FEATURES", "syst
 
 EXTRA_USERS_PARAMS = " \
 	usermod -L root; \
+	usermod -a -G dialout ${ACCOUNT_NAME}; \
+	usermod -a -G plugdev ${ACCOUNT_NAME}; \
 "
 
 ROOTFS_POSTPROCESS_COMMAND += " \
