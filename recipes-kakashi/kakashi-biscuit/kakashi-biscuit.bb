@@ -7,7 +7,7 @@ inherit npm useradd
 
 B="${S}"
 
-DEPENDS += " nodejs"
+DEPENDS += " nodejs udev"
 RDEPENDS_${PN} += " nodejs bash libudev libgphoto2 imagemagick"
 
 SRCBRANCH = "master"
