@@ -16,6 +16,7 @@ IMAGE_INSTALL = " \
 	resolvconf \
 	ntp \
 	hostapd \
+	lighttpd \
 	tzdata \
 	coreutils \
 	cronie \
