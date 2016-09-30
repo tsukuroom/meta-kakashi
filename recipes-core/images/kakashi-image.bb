@@ -15,7 +15,8 @@ IMAGE_INSTALL = " \
 	dropbear \
 	resolvconf \
 	ntp \
-	hostapd \
+	wpa-supplicant \
+	wireless-tools \
 	lighttpd \
 	tzdata \
 	coreutils \
